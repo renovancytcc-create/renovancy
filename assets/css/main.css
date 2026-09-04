@@ -11,14 +11,14 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 .scrolled .header{
-  background-color: #B7D7FC;
+  background-color: #b3abff;
   background:blur(10px);
 }
 
 
-.logoprincipal{
+.logoprincipal {
   height: auto;
-  max-height: 40px;   /* ajuste esse valor conforme o tamanho desejado */
+  max-height: 40px;
   width: auto;
 }
 
@@ -34,7 +34,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #DCFCFC; /* Background color for the entire website, including individual sections */
+  --background-color: #e8dcff; /* Background color for the entire website, including individual sections */
   --default-color:  #281e3cd9; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #3B1E63; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #5800AA; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -57,7 +57,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #B7D7FC;
+  --background-color: #b3abff;
   --surface-color: #37373e;
 }
 
@@ -162,7 +162,7 @@ h6 {
 
 
 .header {
-  --background-color:#95c2f5;
+  --background-color:#b3abff;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
@@ -3045,7 +3045,50 @@ section,
     margin-top: 30px;
   }
 }
+/*--------------------------------------------------------------
+# Header Responsivo - Mobile
+--------------------------------------------------------------*/
+@media (max-width: 575px) {
+  .header .container {
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
 
+  .header .logo img.logoprincipal {
+    max-height: 26px;
+  }
+
+  .header-social-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-right: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .header-social-links a.instagram,
+  .header-social-links a.linkedin {
+    display: none;
+  }
+
+  #theme-toggle {
+    font-size: 16px !important;
+    margin-left: 0 !important;
+  }
+
+  #lang-toggle {
+    font-size: 11px !important;
+    white-space: nowrap;
+    margin-left: 4px !important;
+  }
+
+  .mobile-nav-toggle {
+    font-size: 26px;
+    margin-right: 0;
+    margin-left: 4px;
+  }
+}
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/

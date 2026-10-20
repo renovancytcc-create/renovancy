@@ -1,0 +1,40 @@
+CRÉDITOS E LICENÇAS DAS IMAGENS DO PORTFÓLIO (RENOVANCY)
+=========================================================
+Todas as imagens foram padronizadas para a proporção 4:3 (1200×900 px) e otimizadas em formato JPG (< 200 KB).
+Fontes de uso livre (Unsplash License / Creative Commons CC0 1.0 Universal).
+
+1. Arquivo: assets/img/portfolio/sistema-1.jpg
+   Projeto no portfólio: Painel Administrativo (Sistemas)
+   Autor: Luke Chesser (@lukechesser)
+   Fonte: Unsplash — https://unsplash.com/photos/JKUTrJ4vK00 (ID: photo-1551288049-bebda4e38f71)
+   Licença: Unsplash License (uso comercial e não comercial gratuito, sem exigência de atribuição) — https://unsplash.com/license
+
+2. Arquivo: assets/img/portfolio/sistema-2.jpg
+   Projeto no portfólio: Sistema de Gestão (Sistemas)
+   Autor: Carlos Muza (@kmuza)
+   Fonte: Unsplash — https://unsplash.com/photos/hpjSkU2UYSU (ID: photo-1460925895917-afdab827c52f)
+   Licença: Unsplash License (uso comercial e não comercial gratuito) — https://unsplash.com/license
+
+3. Arquivo: assets/img/portfolio/grafico-1.jpg
+   Projeto no portfólio: Identidade Visual (Design Gráfico)
+   Autor: Balázs Kétyi (@balazsketyi)
+   Fonte: Unsplash — https://unsplash.com/photos/LPWl2pEVGKc (ID: photo-1561070791-2526d30994b5)
+   Licença: Unsplash License (uso comercial e não comercial gratuito) — https://unsplash.com/license
+
+4. Arquivo: assets/img/portfolio/grafico-2.jpg
+   Projeto no portfólio: Papelaria Corporativa (Design Gráfico)
+   Autor: Jeff Sheldon (@ugmonk)
+   Fonte: Unsplash / Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Notebooks_and_trinkets_(Unsplash).jpg
+   Licença: Creative Commons CC0 1.0 Universal (Domínio Público) / Unsplash License — https://creativecommons.org/publicdomain/zero/1.0/
+
+5. Arquivo: assets/img/portfolio/web-1.jpg
+   Projeto no portfólio: Site Institucional (Design Web)
+   Autor: Igor Miske (@igormiske)
+   Fonte: Unsplash / Wikimedia Commons — https://unsplash.com/photos/Px3iBXV-4TU / https://commons.wikimedia.org/wiki/File:Work_(Unsplash_Px3iBXV-4TU).jpg
+   Licença: Creative Commons CC0 1.0 Universal / Unsplash License — https://unsplash.com/license
+
+6. Arquivo: assets/img/portfolio/web-2.jpg
+   Projeto no portfólio: Landing Page (Design Web)
+   Autor: Pankaj Patel (@pankajpatel)
+   Fonte: Unsplash — https://unsplash.com/photos/Ylk5n_nd9dA (ID: photo-1530435460869-d13625c69bbf)
+   Licença: Unsplash License (uso comercial e não comercial gratuito) — https://unsplash.com/license

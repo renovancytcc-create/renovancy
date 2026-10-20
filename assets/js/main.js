@@ -4,10 +4,6 @@
 * Updated: Aug 19 2025 with Bootstrap v5.3.7
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
-*
-* AJUSTADO: filtro do portfólio reescrito em JS puro (sem Isotope),
-* pois o Isotope conflitava com o CSS Grid usado em .portfolio-grid
-* e causava desalinhamento e botões "sem efeito".
 */
 
 (function() {
@@ -98,20 +94,18 @@
   document.addEventListener('scroll', toggleScrollTop);
 
   /**
-   * Animation on scroll function and init
+   * Animation on scroll function and init (subtle, respects prefers-reduced-motion)
    */
   function aosInit() {
     if (typeof AOS === 'undefined') return;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     AOS.init({
-      duration: 400,
-      offset: 0,
+      disable: prefersReducedMotion,
+      duration: 350,
+      offset: 20,
       delay: 0,
-      easing: 'ease-out-cubic',
+      easing: 'ease-out',
       once: true
-    });
-
-    window.addEventListener('scroll', () => {
-      AOS.refresh();
     });
   }
   window.addEventListener('load', aosInit);
@@ -119,11 +113,18 @@
   /**
    * Initiate glightbox (zoom nas imagens do portfólio)
    */
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({
-      selector: '.glightbox'
-    });
+  let glightboxInstance = null;
+  function initLightbox() {
+    if (typeof GLightbox !== 'undefined') {
+      if (glightboxInstance && typeof glightboxInstance.destroy === 'function') {
+        glightboxInstance.destroy();
+      }
+      glightboxInstance = GLightbox({
+        selector: '.glightbox'
+      });
+    }
   }
+  initLightbox();
 
   /**
    * Initiate Pure Counter
@@ -153,12 +154,7 @@
   }
 
   /**
-   * Filtro do Portfólio (JS puro, sem Isotope)
-   * -------------------------------------------------
-   * Cada item do portfólio já tem uma classe tipo
-   * "filter-branding", "filter-web", "filter-print", "filter-motion".
-   * Cada botão de filtro tem um atributo data-filter com o valor
-   * correspondente (ex: ".filter-branding") ou "*" para mostrar tudo.
+   * Filtro do Portfólio (classes: filter-sistemas, filter-grafico, filter-web)
    */
   document.querySelectorAll('.portfolio-filters-wrapper').forEach(function (wrapper) {
     const filterButtons = wrapper.querySelectorAll('.portfolio-filters li');
@@ -168,11 +164,10 @@
 
     filterButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        // marca visualmente o botão ativo
         filterButtons.forEach(b => b.classList.remove('filter-active'));
         this.classList.add('filter-active');
 
-        const filterValue = this.getAttribute('data-filter'); // ex: ".filter-branding" ou "*"
+        const filterValue = this.getAttribute('data-filter'); // "*", ".filter-sistemas", ".filter-grafico", ".filter-web"
 
         items.forEach(function (item) {
           const shouldShow =
@@ -182,9 +177,8 @@
           item.style.display = shouldShow ? '' : 'none';
         });
 
-        // reprocessa as animações AOS para os itens que reaparecerem
-        if (typeof aosInit === 'function') {
-          aosInit();
+        if (typeof AOS !== 'undefined' && typeof AOS.refresh === 'function') {
+          AOS.refresh();
         }
       });
     });
@@ -193,16 +187,19 @@
   /**
    * Frequently Asked Questions Toggle
    */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
+  document.querySelectorAll('.faq-item .faq-header').forEach((faqHeader) => {
+    faqHeader.addEventListener('click', () => {
+      const item = faqHeader.closest('.faq-item');
+      if (item) {
+        item.classList.toggle('faq-active');
+      }
     });
   });
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function() {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -234,7 +231,7 @@
       } else {
         navmenulink.classList.remove('active');
       }
-    })
+    });
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
